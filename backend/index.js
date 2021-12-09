@@ -1,9 +1,13 @@
 const express = require("express")
 const app = express()
+const cors = require("cors")
 const port = 5000
 
 // import des routes depuis le fichier ./routes/students
 const students = require("./routes/students")
+
+// j'ouvre mon serveur a toutes les requetes exterieures
+app.use(cors())
 
 // permet de lire le body de l'objet req (req.body)
 app.use(express.json())
